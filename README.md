@@ -4,9 +4,10 @@
 
 ## Cách hoạt động
 
-Ứng dụng bào gồm 2 Activity - `CreateDeepLinkActivity` và `MainActivity`.
+Ứng dụng bào gồm 3 Activity - `CreateDeepLinkActivity`, `ReceiveAndHandleDeeplinkActivity` và `MainActivity`.
 - `CreateDeepLinkActivity`: Tạo và gửi (create and send) deeplink request.
-- `MainActivity`: Nhận và xử lý (receive and handle) deeplink request.
+- `ReceiveAndHandleDeeplinkActivity`: Nhận và xử lý (receive and handle) deeplink request.
+- `MainActivity`: Màn hình chính khi mở app lên. Có chứa 1 nút để mở `CreateDeepLinkActivity`.
 
 ## Các dạng deeplink được hỗ trợ
 `CreateDeepLinkActivity` có chứa Combo Box để user lựa chọn các dạng deeplink để send request deeplink:
@@ -23,7 +24,7 @@
    - Chứa các hằng số dùng cho deeplink URL.
 2. ui: Chứa các file UI Jetpack Compose.
 3. send: Chứa `CreateDeepLinkActivity` để tạo và gửi deeplink request.
-4. receive: Chứa `MainActivity` để nhận và xử lý deeplink request.
+4. receive: Chứa `ReceiveAndHandleDeeplinkActivity` để nhận và xử lý deeplink request.
 
 ## Các thư viện sử dụng, dependencies:
 - navigation-compose: Phiên bản 3.0.0 trở lên.
