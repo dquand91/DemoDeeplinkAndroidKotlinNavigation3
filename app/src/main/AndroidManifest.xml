@@ -26,6 +26,52 @@
         <activity android:name=".ReceiveAndHandleDeeplinkActivity"
             android:exported="true"
             android:theme="@style/Theme.DemoDeepLinkNav3">
+            <!-- This is intent filter to handle Deeplink request -->
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="https"
+                    android:host="www.nav3recipes.com"/>
+                <!-- filter for exact url deeplink to the /home screen -->
+                <uri-relative-filter-group android:allow="true">
+                    <data android:path="/home" />
+                </uri-relative-filter-group>
+
+                <!-- filter for exactly two path arguments
+                 With: [^/]+$ means Regex it matches a sequence of one or more characters (not including /) at the end of a string.-->
+                <uri-relative-filter-group android:allow="true">
+                    <data android:pathPattern="/users/include/[^/]+$" />
+                </uri-relative-filter-group>
+
+
+                <!-- filter for optional query arguments
+                android:query="firstName=value!" means that the query parameter 'firstName' is required, but its value can be anything.
+                Example: https://www.nav3recipes.com/users/search?firstName=abc123
+                -->
+                <uri-relative-filter-group android:allow="true">
+                    <data android:path="/users/search" />
+                    <data android:query="firstName=value!" />
+                </uri-relative-filter-group>
+
+                <!-- It means the query parameter 'minAge' is required
+                   But the value can be anything
+                   Example: https://www.nav3recipes.com/users/search?minAge=DEF123
+                   -->
+                <uri-relative-filter-group android:allow="true">
+                    <data android:path="/users/search" />
+                    <data android:query="minAge=value!" />
+                </uri-relative-filter-group>
+                <uri-relative-filter-group android:allow="true">
+                    <data android:path="/users/search" />
+                    <data android:query="maxAge=value!" />
+                </uri-relative-filter-group>
+                <uri-relative-filter-group android:allow="true">
+                    <data android:path="/users/search" />
+                    <data android:query="location=value!" />
+                </uri-relative-filter-group>
+            </intent-filter>
         </activity>
 
         <activity android:name=".CreateDeepLinkActivity"
