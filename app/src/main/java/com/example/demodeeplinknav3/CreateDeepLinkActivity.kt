@@ -154,7 +154,7 @@ class CreateDeepLinkActivity : ComponentActivity() {
                 PaddedButton("Deeplink Away!") {
                     val intent = Intent(
                         this@CreateDeepLinkActivity,
-                        MainActivity::class.java
+                        ReceiveAndHandleDeeplinkActivity::class.java
                     )
                     // start activity with the url
                     intent.data = finalUrl.toUri()

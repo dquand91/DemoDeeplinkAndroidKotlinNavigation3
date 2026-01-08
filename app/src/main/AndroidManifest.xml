@@ -33,7 +33,7 @@
                 <category android:name="android.intent.category.BROWSABLE" />
 
                 <data android:scheme="https"
-                    android:host="www.nav3recipes.com"/>
+                    android:host="www.demodeeplinknav3.com"/>
                 <!-- filter for exact url deeplink to the /home screen -->
                 <uri-relative-filter-group android:allow="true">
                     <data android:path="/home" />
@@ -48,7 +48,7 @@
 
                 <!-- filter for optional query arguments
                 android:query="firstName=value!" means that the query parameter 'firstName' is required, but its value can be anything.
-                Example: https://www.nav3recipes.com/users/search?firstName=abc123
+                Example: https://www.demodeeplinknav3.com/users/search?firstName=abc123
                 -->
                 <uri-relative-filter-group android:allow="true">
                     <data android:path="/users/search" />
@@ -57,7 +57,7 @@
 
                 <!-- It means the query parameter 'minAge' is required
                    But the value can be anything
-                   Example: https://www.nav3recipes.com/users/search?minAge=DEF123
+                   Example: https://www.demodeeplinknav3.com/users/search?minAge=DEF123
                    -->
                 <uri-relative-filter-group android:allow="true">
                     <data android:path="/users/search" />

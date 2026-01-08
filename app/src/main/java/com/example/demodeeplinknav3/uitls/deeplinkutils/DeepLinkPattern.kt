@@ -20,8 +20,8 @@ import java.io.Serializable
  * Điều này có nghĩa là nếu [T] hỗ trợ 2 deeplink patterns:
  *
  * ```
- *  val deeplink1 = www.nav3recipes.com/home
- *  val deeplink2 = www.nav3recipes.com/profile/{userId}
+ *  val deeplink1 = www.demodeeplinknav3.com/home
+ *  val deeplink2 = www.demodeeplinknav3.com/profile/{userId}
  *  ```
  * Thì Cần phải tạo 2 [DeepLinkPattern] tương ứng:
  * ```
