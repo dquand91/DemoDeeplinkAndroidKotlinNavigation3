@@ -25,52 +25,101 @@
 
         <activity android:name=".ReceiveAndHandleDeeplinkActivity"
             android:exported="true"
-            android:theme="@style/Theme.DemoDeepLinkNav3">
+            android:theme="@style/Theme.DemoDeepLinkNav3"
+            tools:ignore="IntentFilterUniqueDataAttributes">
             <!-- This is intent filter to handle Deeplink request -->
             <intent-filter android:autoVerify="true">
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
 
-                <data android:scheme="https"
-                    android:host="www.demodeeplinknav3.com"/>
-                <!-- filter for exact url deeplink to the /home screen -->
-                <uri-relative-filter-group android:allow="true">
-                    <data android:path="/home" />
-                </uri-relative-filter-group>
+<!--                <data android:scheme="https"-->
+<!--                    android:host="www.demodeeplinknav3.com"/>-->
+<!--                &lt;!&ndash; filter for exact url deeplink to the /home screen &ndash;&gt;-->
+<!--                <uri-relative-filter-group android:allow="true">-->
+<!--                    <data android:path="/home" />-->
+<!--                </uri-relative-filter-group>-->
 
-                <!-- filter for exactly two path arguments
-                 With: [^/]+$ means Regex it matches a sequence of one or more characters (not including /) at the end of a string.-->
-                <uri-relative-filter-group android:allow="true">
-                    <data android:pathPattern="/users/include/[^/]+$" />
-                </uri-relative-filter-group>
+                <!-- Exact: https://www.demodeeplinknav3.com/home -->
+                <data
+                    android:scheme="https"
+                    android:host="www.demodeeplinknav3.com"
+                    android:path="/home" />
 
 
-                <!-- filter for optional query arguments
-                android:query="firstName=value!" means that the query parameter 'firstName' is required, but its value can be anything.
-                Example: https://www.demodeeplinknav3.com/users/search?firstName=abc123
-                -->
-                <uri-relative-filter-group android:allow="true">
-                    <data android:path="/users/search" />
-                    <data android:query="firstName=value!" />
-                </uri-relative-filter-group>
+<!--                &lt;!&ndash; filter for exactly two path arguments-->
+<!--                 With: [^/]+$ means Regex it matches a sequence of one or more characters (not including /) at the end of a string.&ndash;&gt;-->
+<!--                <uri-relative-filter-group android:allow="true">-->
+<!--                    <data android:pathPattern="/users/include/[^/]+$" />-->
+<!--                </uri-relative-filter-group>-->
+                <!-- Pattern: https://www.demodeeplinknav3.com/users/include/{oneSegment} -->
+                <data
+                    android:scheme="https"
+                    android:host="www.demodeeplinknav3.com"
+                    android:pathPattern="/users/include/[^/]+$"
+                     />
 
-                <!-- It means the query parameter 'minAge' is required
-                   But the value can be anything
-                   Example: https://www.demodeeplinknav3.com/users/search?minAge=DEF123
-                   -->
-                <uri-relative-filter-group android:allow="true">
-                    <data android:path="/users/search" />
-                    <data android:query="minAge=value!" />
-                </uri-relative-filter-group>
-                <uri-relative-filter-group android:allow="true">
-                    <data android:path="/users/search" />
-                    <data android:query="maxAge=value!" />
-                </uri-relative-filter-group>
-                <uri-relative-filter-group android:allow="true">
-                    <data android:path="/users/search" />
-                    <data android:query="location=value!" />
-                </uri-relative-filter-group>
+
+
+<!--                &lt;!&ndash; filter for optional query arguments-->
+<!--                android:query="firstName=value!" means that the query parameter 'firstName' is required, but its value can be anything.-->
+<!--                Example: https://www.demodeeplinknav3.com/users/search?firstName=abc123-->
+<!--                &ndash;&gt;-->
+<!--                <uri-relative-filter-group android:allow="true">-->
+<!--                    <data android:path="/users/search" />-->
+<!--                    <data android:query="firstName=value!" />-->
+<!--                </uri-relative-filter-group>-->
+
+                <!-- Queries: https://www.demodeeplinknav3.com/users/search?... -->
+                <data
+                    android:scheme="https"
+                    android:host="www.demodeeplinknav3.com"
+                    android:path="/users/search"
+                    android:query="firstName=value!" />
+
+
+
+<!--                &lt;!&ndash; It means the query parameter 'minAge' is required-->
+<!--                   But the value can be anything-->
+<!--                   Example: https://www.demodeeplinknav3.com/users/search?minAge=DEF123-->
+<!--                   &ndash;&gt;-->
+<!--                <uri-relative-filter-group android:allow="true">-->
+<!--                    <data android:path="/users/search" />-->
+<!--                    <data android:query="minAge=value!" />-->
+<!--                </uri-relative-filter-group>-->
+                <data
+                    android:scheme="https"
+                    android:host="www.demodeeplinknav3.com"
+                    android:path="/users/search"
+                    android:query="minAge=value!" />
+
+
+
+<!--                <uri-relative-filter-group android:allow="true">-->
+<!--                    <data android:path="/users/search" />-->
+<!--                    <data android:query="maxAge=value!" />-->
+<!--                </uri-relative-filter-group>-->
+
+                <data
+                    android:scheme="https"
+                    android:host="www.demodeeplinknav3.com"
+                    android:path="/users/search"
+                    android:query="maxAge=value!" />
+
+
+
+<!--                <uri-relative-filter-group android:allow="true">-->
+<!--                    <data android:path="/users/search" />-->
+<!--                    <data android:query="location=value!" />-->
+<!--                </uri-relative-filter-group>-->
+
+                <data
+                    android:scheme="https"
+                    android:host="www.demodeeplinknav3.com"
+                    android:path="/users/search"
+                    android:query="location=value!" />
+
+
             </intent-filter>
         </activity>
 
