@@ -23,7 +23,7 @@ internal const val PATH_SEARCH = "$STRING_LITERAL_USERS/$STRING_LITERAL_SEARCH"
 // Exact URL matching "https://www.demodeeplinknav3.com/home"
 internal const val URL_HOME_EXACT = "$PATH_BASE/$STRING_LITERAL_HOME"
 
-// URL with path argument "https://www.demodeeplinknav3.com/users/with/{filter}"
+// URL with path argument "https://www.demodeeplinknav3.com/users/include/{filter}"
 internal const val URL_USERS_WITH_FILTER = "$PATH_BASE/$PATH_INCLUDE/{$STRING_LITERAL_FILTER}"
 
 // URL with query parameters "https://www.demodeeplinknav3.com/users/search?{firstName}&{age}&{location}"

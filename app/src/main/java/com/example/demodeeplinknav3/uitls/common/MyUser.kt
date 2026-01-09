@@ -21,7 +21,7 @@ public const val LOCATION_BC = "BC"
 public const val LOCATION_BR = "BR"
 public const val LOCATION_US = "US"
 public const val EMPTY = ""
-public val LIST_My_USERS = listOf(
+public val LIST_MY_USERS = listOf(
     MyUser(FIRST_NAME_JOHN, 15, LOCATION_CA),
     MyUser(FIRST_NAME_JOHN, 22, LOCATION_BC),
     MyUser(FIRST_NAME_JOHN, 22, LOCATION_BR),
